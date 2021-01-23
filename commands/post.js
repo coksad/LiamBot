@@ -17,7 +17,7 @@ function getIDFromUsername(username) {
 }
 
 async function payments(call) {
-	let paymentOptions = ['amount of robux', 'percentage', 'money'],
+	let paymentOptions = ['robux', 'percentage', 'money'],
 		payments = '',
 		ranOnce = false,
 		amount;
@@ -28,7 +28,7 @@ async function payments(call) {
 			.then((message) => message.content.toLowerCase());
 
 		if (!ranOnce)
-			paymentOptions = ['amount of robux', 'percentage', 'money', 'done'];
+			paymentOptions = ['robux', 'percentage', 'money', 'done'];
 
 		ranOnce = true;
 
@@ -39,7 +39,7 @@ async function payments(call) {
 		amount = await call.prompt(
 			payment === 'amount of robux' ? 'How much robux are you offering for this job?' :
 				payment === 'money' ? 'How much money (and in what currency) are you offering for this job?' :
-					payment === 'percentage' ? 'How much percetnage are you offering for this job?' : 'An impossible error occured.',
+					payment === 'percentage' ? 'How much percentage are you offering for this job?' : 'An impossible error occured.',
 			{
 				filter: /\d/,
 				correct: 'Input must include a number',
@@ -108,10 +108,10 @@ module.exports = {
 
 		if (type === 'hiring') {
 			console.log(call.client.HIRING_DEVELOPER_TYPES);
-			type = await call.prompt(`What type of developer are you looking for? Options: \`${Object.keys(call.client.HIRING_DEVELOPER_TYPES).join('`, `')}\``,
+			type = await call.prompt(`What type of service are you looking for? Options: \`${Object.keys(call.client.HIRING_DEVELOPER_TYPES).join('`, `')}\``,
 				{ filter: Object.keys(call.client.HIRING_DEVELOPER_TYPES) }).then((m) => m.content.toLowerCase());
 		} else {
-			type = await call.prompt(`What type of developer are you? Options: \`${Object.keys(call.client.FOR_HIRE_DEVELOPER_TYPES).join('`, `')}\``,
+			type = await call.prompt(`What type of industry are you for-hire in? Options: \`${Object.keys(call.client.FOR_HIRE_DEVELOPER_TYPES).join('`, `')}\``,
 				{ filter: Object.keys(call.client.FOR_HIRE_DEVELOPER_TYPES) }).then((m) => m.content.toLowerCase());
 		}
 
@@ -157,7 +157,7 @@ module.exports = {
 			m.react('❌');
 			m.react('✏️');
 		}, () => {
-			call.message.channel.send('Failed to send your post for approval. If this error persists, please contact a moderator.');
+			call.message.channel.send('Failed to send your post for approval. If this error persists, please contact an Administrator.');
 		});
 	}
 };
