@@ -37,7 +37,7 @@ async function payments(call) {
 
 		paymentOptions.splice(paymentOptions.indexOf(payment), 1);
 		amount = await call.prompt(
-			payment === 'amount of robux' ? 'How much robux are you offering for this job?' :
+			payment === 'robux' ? 'How much robux are you offering for this job?' :
 				payment === 'money' ? 'How much money (and in what currency) are you offering for this job?' :
 					payment === 'percentage' ? 'How much percentage are you offering for this job?' : 'An impossible error occured.',
 			{
