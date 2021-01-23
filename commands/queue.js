@@ -17,7 +17,7 @@ module.exports = {
 				.setColor(call.client.hex)
 				.setTitle('Pending')
 				.setDescription(`Marketplace Posts: \`${await fetchSize(marketplaceApproval)}\``)
-				.setFooter(`Requested by ${call.message.author.username}`, call.message.author.displayAvatarURL())
+				.setFooter(`Requested by ${call.message.author.username}`, call.message.author.displayAvatarURL)
 		);
 	}
 };
