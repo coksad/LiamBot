@@ -131,7 +131,7 @@ module.exports = {
 		let embed = new RichEmbed()
 			.setColor('GREEN')
 			.setAuthor(`${call.message.author.tag} - ${call.message.author.id}`, call.message.author.displayAvatarURL)
-			.setTitle(`${titleCase(type)} Request`)
+			.setTitle(`RoAdvertiser Marketplace`)
 			.setDescription(description)
 			.addField('Payment', payment)
 			.addField('Contact', contact)
