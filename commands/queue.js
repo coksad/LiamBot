@@ -1,5 +1,4 @@
 const { RichEmbed } = require('discord.js');
-const { client } = require('../load/database.js');
 
 function fetchSize(channel) {
 	return channel.fetchMessages({ limit: 100 }).then((ms) => ms.filter((m) => m.author.bot).size);

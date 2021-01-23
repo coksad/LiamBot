@@ -3,8 +3,9 @@ const { client } = require('../load/database.js');
 module.exports = {
 	id: 'marketplacewhitelist',
 	aliases: ['marketplaceblacklist'],
+	channels: 'guild',
 	exec: async (call) => {
-		if (call.message.author.id !== call.client.ownerID)
+		if (!call.message.member.roles.has('800673509310201886'))
 			return call.message.channel.send('You do not have permission to use this command.');
 
 		let user = call.args[0];

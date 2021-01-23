@@ -6,10 +6,6 @@ const LINK_REGEX = /^(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-
 const PREMIUM_ROLE = '800662484276740126';
 const MAIN_SERVER = '800652883270959124';
 
-function titleCase(str) {
-	return str.toLowerCase().replace(/\b[^ ]/g, (c) => c.toUpperCase());
-}
-
 function getIDFromUsername(username) {
 	return fetch(`https://api.roblox.com/users/get-by-username?username=${username}`)
 		.then((res) => res.json())
@@ -93,8 +89,8 @@ async function contacts(call) {
 module.exports = {
 	id: 'post',
 	exec: async (call) => {
-		//if (await client.query('SELECT "user" FROM public.disallowed WHERE "user" = $1', [call.message.author.id]).then((res) => res.rows[0]))
-		//return call.message.channel.send('You are blacklisted from the marketplace.');
+		if (await client.query('SELECT "user" FROM public.disallowed WHERE "user" = $1', [call.message.author.id]).then((res) => res.rows[0]))
+			return call.message.channel.send('You are blacklisted from the marketplace.');
 
 		if (call.message.channel.type === 'text')
 			call.message.channel.send('The prompt will continue in your direct messages. If you do not receive a direct message, please change your privacy settings and try again.');
@@ -131,7 +127,7 @@ module.exports = {
 		let embed = new RichEmbed()
 			.setColor('GREEN')
 			.setAuthor(`${call.message.author.tag} - ${call.message.author.id}`, call.message.author.displayAvatarURL)
-			.setTitle(`RoAdvertiser Marketplace`)
+			.setTitle('RoAdvertiser Marketplace')
 			.setDescription(description)
 			.addField('Payment', payment)
 			.addField('Contact', contact)
