@@ -20,7 +20,7 @@ module.exports = {
 
 		let query = call.aliasUsed === 'marketplaceblacklist' ? client.query('INSERT INTO public.disallowed ("user") VALUES($1)', [user.id]) : client.query('DELETE FROM public.disallowed WHERE "user" = $2', [user.id]);
 
-		query.then(() => call.message.channel.send(`Successfully ${call.aliasUsed === 'marketplacewhitelist' ? 'added' : 'removed'} this user from the blacklist.`),
-			() => call.message.channel.send(`Failed to ${call.aliasUsed === 'marketplacewhitelist' ? 'add' : 'remove'} this user to the blacklist.`));
+		query.then(() => call.message.channel.send(`Successfully ${call.aliasUsed === 'marketplacewhitelist' ? 'removed' : 'added'} this user from the blacklist.`),
+			() => call.message.channel.send(`Failed to ${call.aliasUsed === 'marketplacewhitelist' ? 'remove' : 'add'} this user to the blacklist.`));
 	}
 };
