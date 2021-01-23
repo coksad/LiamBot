@@ -12,7 +12,7 @@ module.exports = {
 		if (!user)
 			return call.message.channel.send('Please rerun the comand with a user to add or remove from the marketplace blacklist.');
 
-		user = await call.client.users.fetch(user.replace(/\D+/g, ''));
+		user = await call.client.users.get(user.replace(/\D+/g, ''));
 
 		if (!user)
 			return call.message.channel.send('Please rerun the comand with a valid user to add or remove from the marketplace blacklist.');
