@@ -8,7 +8,7 @@ const token = process.env.BOT_TOKEN;
 let client = new Client({ disableEveryone: true });
 let loaders = util.promisify(fs.readdir)('./load').then((files) => files.map((n) => require(`./load/${n}`)), () => []);
 
-client.ownerID = '432650511825633317';
+client.ownerID = '741407322944831604';
 
 handler.promptOptionsDefaults.formatTrigger = (prompt, ...args) => {
 	if (typeof args[0] === 'string' && !args[1]) {
