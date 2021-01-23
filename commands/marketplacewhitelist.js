@@ -18,9 +18,16 @@ module.exports = {
 		if (!user)
 			return call.message.channel.send('Please rerun the comand with a valid user to add or remove from the marketplace blacklist.');
 
+		let isBlacklisted = !!await client.query('SELECT "user" FROM public.disallowed WHERE "user" = $1', [user.id]).then((res) => res.rows[0]);
+
+		if (call.aliasUsed === 'marketplaceblacklist' && isBlacklisted)
+			return call.message.channel.send('This user is already blacklisted.');
+		else if (call.aliasUsed === 'marketplacewhitelist' && !isBlacklisted)
+			return call.message.chanel.send('This user is not blacklisted.');
+
 		let query = call.aliasUsed === 'marketplaceblacklist' ? client.query('INSERT INTO public.disallowed ("user") VALUES($1)', [user.id]) : client.query('DELETE FROM public.disallowed WHERE "user" = $1', [user.id]);
 
-		query.then(() => call.message.channel.send(`Successfully ${call.aliasUsed === 'marketplacewhitelist' ? 'removed' : 'added'} this user from the blacklist.`),
-			(err) => console.warn(err.stack) || call.message.channel.send(`Failed to ${call.aliasUsed === 'marketplacewhitelist' ? 'remove' : 'add'} this user to the blacklist.`));
+		query.then(() => call.message.channel.send(`Successfully ${call.aliasUsed === 'marketplacewhitelist' ? 'removed' : 'added'} this user to the blacklist.`),
+			(err) => console.warn(err.stack) || call.message.channel.send(`Failed to ${call.aliasUsed === 'marketplacewhitelist' ? 'remove' : 'add'} this user from the blacklist.`));
 	}
 };
