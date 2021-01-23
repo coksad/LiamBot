@@ -13,7 +13,7 @@ module.exports = {
 		let marketplaceApproval = call.client.approvalChannel;
 
 		call.message.channel.send(
-			new MessageEmbed()
+			new RichEmbed()
 				.setColor(call.client.hex)
 				.setTitle('Pending')
 				.setDescription(`Marketplace Posts: \`${await fetchSize(marketplaceApproval)}\``)
