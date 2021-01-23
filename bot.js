@@ -46,6 +46,6 @@ client.on('ready', async () => {
 			loader.exec(client);
 });
 
-handler(__dirname + '/commands', client, { customPrefix: '!' });
+handler(__dirname + '/commands', client, { customPrefix: ',' });
 
 client.login(token);
