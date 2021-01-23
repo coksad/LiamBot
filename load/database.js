@@ -6,7 +6,7 @@ const { Client } = require('pg');
  */
 module.exports = {
 	id: 'database',
-	client: new Client({ connectionString: process.env.BOT_NAME_DB || process.env.DATABASE_URL, ssl: true }),
+	client: new Client({ connectionString: process.env.BOT_NAME_DB || process.env.DATABASE_URL }),
 	exec: async function () {
 		try {
 			await this.client.connect();
