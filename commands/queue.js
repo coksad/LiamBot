@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { RichEmbed } = require('discord.js');
 const { client } = require('../load/database.js');
 
 function fetchSize(channel) {
