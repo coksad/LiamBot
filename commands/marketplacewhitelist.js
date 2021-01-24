@@ -18,6 +18,8 @@ module.exports = {
 		if (!user)
 			return call.message.channel.send('Please rerun the comand with a valid user to add or remove from the marketplace blacklist.');
 
+		let reason = call.cut.substring(call.args[0].length).trim();
+
 		let isBlacklisted = !!await client.query('SELECT "user" FROM public.disallowed WHERE "user" = $1', [user.id]).then((res) => res.rows[0]);
 
 		if (call.aliasUsed === 'marketplaceblacklist' && isBlacklisted)
@@ -29,5 +31,8 @@ module.exports = {
 
 		query.then(() => call.message.channel.send(`Successfully ${call.aliasUsed === 'marketplacewhitelist' ? 'removed' : 'added'} this user to the blacklist.`),
 			(err) => console.warn(err.stack) || call.message.channel.send(`Failed to ${call.aliasUsed === 'marketplacewhitelist' ? 'remove' : 'add'} this user from the blacklist.`));
+
+		if (reason)
+			user.send(`You have been ${call.aliasUsed === 'marketplaceblacklist' ? 'banned' : 'unbanned'} from posting on the marketplace for \`${reason}\``);
 	}
 };
