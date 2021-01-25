@@ -13,7 +13,8 @@ module.exports = {
 			school: '800694177821753355',
 			airport: '800694219312201738',
 			army: '800694219312201738',
-			everything_else: '800694232486510673'
+			everything_else: '800694232486510673',
+			
 		};
 		client.FOR_HIRE_DEVELOPER_TYPES = {
 			cafe: '800694301696720896',
@@ -21,7 +22,12 @@ module.exports = {
 			school: '800694335636766730',
 			airport: '800694358647111751',
 			army: '800694404830199848',
-			everything_else: '800694417706188850'
+			everything_else: '800694417706188850',
+			gfx_showcasing: '803344812367151204',
+			ui_showcasing: '803344830356127764',
+			build_showcasing: '803344850573197322',
+			scripting_showcasing: '803344897193017345',
+			clothing_showcasing: '803344927945523271'
 		};
 
 		if (!client.approvalChannel)
