@@ -8,25 +8,19 @@ module.exports = {
 	exec: async (client) => {
 		client.approvalChannel = client.channels.get(APPROVAL_CHANNEL);
 		client.HIRING_DEVELOPER_TYPES = {
-			hospitality: '803754860888719381',
-			school: '800694177821753355',
-			airport: '800694219312201738',
-			developers: '800694219312201738',
-			everything_else: '800694232486510673',
+			hospitality: '803754543586213889',
+			school: '803756524479971338',
+			airport: '803756573322117140',
+			developers: '803756616004272138',
+			everything_else: '803757099325849620'
 			
 		};
 		client.FOR_HIRE_DEVELOPER_TYPES = {
-			cafe: '800694301696720896',
-			juicebar: '800694317713719297',
-			school: '800694335636766730',
-			airport: '800694358647111751',
-			army: '800694404830199848',
-			everything_else: '800694417706188850',
-			gfx_showcasing: '803344812367151204',
-			ui_showcasing: '803344830356127764',
-			build_showcasing: '803344850573197322',
-			scripting_showcasing: '803344897193017345',
-			clothing_showcasing: '803344927945523271'
+			hospitality: '803756780941213706',
+			school: '803756795961016380',
+			airport: '803756849475223602',
+			developers: '803756867876421632',
+			everything_else: '803757139922386944'
 		};
 
 		if (!client.approvalChannel)
