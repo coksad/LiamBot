@@ -8,11 +8,10 @@ module.exports = {
 	exec: async (client) => {
 		client.approvalChannel = client.channels.get(APPROVAL_CHANNEL);
 		client.HIRING_DEVELOPER_TYPES = {
-			cafe: '800694110943051787',
-			juicebar: '800694140006039583',
+			hospitality: '803754860888719381',
 			school: '800694177821753355',
 			airport: '800694219312201738',
-			army: '800694219312201738',
+			developers: '800694219312201738',
 			everything_else: '800694232486510673',
 			
 		};
