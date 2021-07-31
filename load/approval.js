@@ -1,18 +1,18 @@
 const { RichEmbed } = require('discord.js');
 
-const APPROVAL_CHANNEL = '800694727590412299';
-const HIGHLIGHT_PING_ROLE = '800675769411567639';
+const APPROVAL_CHANNEL = '870814087825719306';
+const HIGHLIGHT_PING_ROLE = '870814127323492422';
 
 module.exports = {
 	id: 'approval',
 	exec: async (client) => {
 		client.approvalChannel = client.channels.get(APPROVAL_CHANNEL);
 		client.HIRING_DEVELOPER_TYPES = {
-			hospitality: '803756780941213706',
-			school: '803756524479971338',
-			airport: '803756573322117140',
-			developers: '803756616004272138',
-			everything_else: '803757099325849620'
+			hospitality: '870814274866524160',
+			school: '870814293522792518',
+			airport: '870814301693296671',
+			developers: '870814328239050793',
+			everything_else: '870814367900381214'
 			
 		};
 		client.FOR_HIRE_DEVELOPER_TYPES = {
