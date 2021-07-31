@@ -3,8 +3,8 @@ const fetch = require('node-fetch');
 const { client } = require('../load/database.js');
 
 const LINK_REGEX = /^(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})$/;
-const PREMIUM_ROLE = '800662484276740126';
-const MAIN_SERVER = '800652883270959124';
+const PREMIUM_ROLE = '870814127323492422';
+const MAIN_SERVER = '870810899705888818';
 
 function getIDFromUsername(username) {
 	return fetch(`https://api.roblox.com/users/get-by-username?username=${username}`)
