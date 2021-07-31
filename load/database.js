@@ -13,7 +13,7 @@ new Client({
     database: "d8dhvclmvu2bn9",
     port: 5432,
     host: "ec2-176-34-222-188.eu-west-1.compute.amazonaws.com",
-    rejectUnauthorized: false }
+    { rejectUnauthorized: false }
         }),
     exec: async function () {
         try {
