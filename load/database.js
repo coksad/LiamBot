@@ -1,3 +1,4 @@
+
 const { Client } = require('pg');
 
 /**
@@ -14,15 +15,5 @@ new pg.Client({
     port: 5432,
     host: "ec2-176-34-222-188.eu-west-1.compute.amazonaws.com",
     ssl: true
-
-Client({ connectionString: process.env.BOT_NAME_DB || process.env.DATABASE_URL }),
-    exec: async function () {
-        try {
-            await this.client.connect();
-
-            console.log('Connected database client.');
-        } catch (e) {
-            console.warn('Database failed to connect\n', e.stack);
-        }
-    }
+   }
 };
