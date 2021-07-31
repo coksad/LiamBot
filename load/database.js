@@ -1,4 +1,3 @@
-```js
 const { Client } = require('pg');
 
 /**
@@ -27,4 +26,4 @@ Client({ connectionString: process.env.BOT_NAME_DB || process.env.DATABASE_URL }
             console.warn('Database failed to connect\n', e.stack);
         }
     }
-};```
+};
