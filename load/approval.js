@@ -1,6 +1,6 @@
 const { RichEmbed } = require('discord.js');
 
-const APPROVAL_CHANNEL = '870814087825719306';
+const APPROVAL_CHANNEL = '800694727590412299';
 const HIGHLIGHT_PING_ROLE = '870814127323492422';
 
 module.exports = {
