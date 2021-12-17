@@ -12,6 +12,7 @@ module.exports = {
 			school: '870814293522792518',
 			airport: '870814301693296671',
 			developers: '870814328239050793',
+			nations: '921409402056105984',
 			everything_else: '870814367900381214'
 			
 		};
@@ -20,6 +21,7 @@ module.exports = {
 			school: '803756795961016380',
 			airport: '803756849475223602',
 			developers: '803756867876421632',
+			nations: '921409402056105984',
 			everything_else: '803757139922386944'
 		};
 
