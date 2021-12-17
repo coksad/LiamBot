@@ -13,7 +13,7 @@ function getIDFromUsername(username) {
 }
 
 async function payments(call) {
-	let paymentOptions = ['robux', 'percentage', 'money', 'none'],
+	let paymentOptions = ['robux', 'percentage', 'money'],
 		payments = '',
 		ranOnce = false,
 		amount;
@@ -35,7 +35,7 @@ async function payments(call) {
 		amount = await call.prompt(
 			payment === 'robux' ? 'How much robux are you offering for this job?' :
 				payment === 'money' ? 'How much money (and in what currency) are you offering for this job?' :
-			             payment === 'none' ? 'If there is no payment, please input "0"' :
+			           
 					payment === 'percentage' ? 'How much percentage are you offering for this job?' : 'An impossible error occured.',
 			{
 				filter: /\d/,
