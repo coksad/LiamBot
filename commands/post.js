@@ -35,7 +35,6 @@ async function payments(call) {
 		amount = await call.prompt(
 			payment === 'robux' ? 'How much robux are you offering for this job?' :
 				payment === 'money' ? 'How much money (and in what currency) are you offering for this job?' :
-			           
 					payment === 'percentage' ? 'How much percentage are you offering for this job?' : 'An impossible error occured.',
 			{
 				filter: /\d/,

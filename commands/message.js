@@ -3,7 +3,7 @@ module.exports = {
 	aliases: ['dm'],
 	channels: 'guild',
 	exec: async (call) => {
-		if (!call.message.member.roles.has('870815010354520115'))
+		if (!call.message.member.roles.has('800673509310201886'))
 			return call.message.channel.send('You do not have permission to use this command.');
 
 		let user = call.args[0];

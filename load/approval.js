@@ -8,20 +8,19 @@ module.exports = {
 	exec: async (client) => {
 		client.approvalChannel = client.channels.get(APPROVAL_CHANNEL);
 		client.HIRING_DEVELOPER_TYPES = {
-			hospitality: '870814274866524160',
-			school: '870814293522792518',
-			airport: '870814301693296671',
-			developers: '870814328239050793',
+			hospitality: '803754860888719381',
+			school: '803756524479971338',
+			airport: '803756573322117140',
+			developers: '803756616004272138',
 			nations: '921409402056105984',
-			everything_else: '870814367900381214'
-			
+			everything_else: '803757099325849620'
 		};
 		client.FOR_HIRE_DEVELOPER_TYPES = {
 			hospitality: '803756780941213706',
 			school: '803756795961016380',
 			airport: '803756849475223602',
 			developers: '803756867876421632',
-			nations: '921409402056105984',
+			nations: '921409480422461471',
 			everything_else: '803757139922386944'
 		};
 
